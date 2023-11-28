@@ -1,0 +1,25 @@
+{
+  "name": "vector-search-embedding-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khuaulme/vector-search-embedding-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khuaulme/vector-search-embedding-lab/issues"
+  },
+  "homepage": "https://github.com/khuaulme/vector-search-embedding-lab#readme",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
+    "mongodb": "^6.1.0"
+  }
+}
