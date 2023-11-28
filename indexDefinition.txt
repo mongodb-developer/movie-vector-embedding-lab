@@ -1,0 +1,14 @@
+plotSemanticIndex
+
+{
+	"mappings":{
+		"dynamic": true,
+		"fields":{
+			"plot_embedding_hf":{
+				"dimensions":384,
+				"similarity":"dotProduct",
+				"type":"knnVector"
+			}
+		}
+	}
+}
