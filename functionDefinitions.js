@@ -17,8 +17,11 @@ async function generateEmbeddings(text) {
         `Request failed with status code: ${response.status}: ${response.data}`
       );
     }
-
+    // START JUST TO SEE IF EMBEDDINGS ARE RETURNED
     console.log(response.data);
+
+    // IF EMBEDDINGS WORK, UNCOMMENT THE FOLLOWING
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -33,8 +36,8 @@ async function saveEmbeddings() {
     const collection = db.collection("movies");
 
     const docs = await collection
-      .find({ plot: { $exists: true } })
-      .limit(50)
+      .find({ plot: { $exists: true }, genres: "Horror" })
+      .limit(100)
       .toArray();
 
     for (let doc of docs) {
@@ -59,11 +62,11 @@ async function queryEmbeddings(query) {
       .aggregate([
         {
           $vectorSearch: {
-            index: "plotSemanticIndex",
+            index: "vectorIndex",
             queryVector: await generateEmbeddings(query),
             path: "plot_embedding_hf",
             numCandidates: 100,
-            limit: 4,
+            limit: 8,
           },
         },
         {
@@ -82,4 +85,4 @@ async function queryEmbeddings(query) {
   }
 }
 
-queryEmbeddings("imaginary characters from outer space");
+queryEmbeddings("disease turning people into zombies");
