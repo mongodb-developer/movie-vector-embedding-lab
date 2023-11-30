@@ -2,11 +2,11 @@ vectorIndex
 
 {
 	"mappings":{
-		"dynamic": true,
+		"dynamic": false,
 		"fields":{
 			"plot_embedding_hf":{
 				"dimensions":384,
-				"similarity":"dotProduct",
+				"similarity":"cosine",
 				"type":"knnVector"
 			}
 		}

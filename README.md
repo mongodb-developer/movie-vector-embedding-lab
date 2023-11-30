@@ -1,7 +1,5 @@
 ## MongoDB Atlas Vector Search Workshop
 
-<h3>Atlas Vector Search Workshop
-</h3>
 <h2>Looking to power an artificial intelligence with long term memory that could take over the world ?</h2>
 <p>Or even something simpler... In this lesson, you will learn to create vector embeddings with machine learning models like OpenAI and Hugging Face, and store them in Atlas for retrieval augmented generation (RAG), semantic search, recommendation engines, dynamic personalization, and other use cases.</p>
 <br/>
@@ -41,6 +39,6 @@ This workshop will teach you how to
 
 ### Atlas Search Workshop:
 
-If you have any questions or feedback about this repo, feel free to create an Issue or PR in this repo or reach out to me on Twitter @YouOldMaid.
+If you have any questions or feedback about this repo, feel free to create an Issue or PR in this repo.
 
 Also please join our online <a href="https://developer.mongodb.com/community/forums/">MongoDB Community</a> to interact with our product and engineering teams along with thousands of other MongoDB and Realm users. <br/><br/>Have fun and happy coding!
