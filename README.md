@@ -2,7 +2,8 @@
 
 <h3>Atlas Vector Search Workshop
 </h3>
-Atlas Vector Search allows developers to take advantage of sophisticated, off-the-shelf machine learning models to power the transformative applications of the future. With Atlas Vector Search, you can a variety of AI-powered use cases quickly to your application with ease.
+<h2>Looking to power an artificial intelligence with long term memory that could take over the world ?</h2>
+<p>Or even something simpler... In this lesson, you will learn to create vector embeddings with machine learning models like OpenAI and Hugging Face, and store them in Atlas for retrieval augmented generation (RAG), semantic search, recommendation engines, dynamic personalization, and other use cases.</p>
 <br/>
 MongoDB Atlas Vector Search provides a lightning fast approximate nearest neighbor search through high dimensional data that you can capture directly in your MongoDB documents. 
 <br/>
@@ -13,12 +14,6 @@ This workshop will teach you how to
 - Index your movie documents using knn, a similarity function, and the dimensions of the encoding model <code>all-MiniLM-L6-v2</code>.
 
 <br/> By the end, you can search semantically through the sample_mflix.movies dataset offered free to download on MongoDB Atlas.
-
-<br/>
-<div align="center">
-<img src="Mflix.png" width="650"  />
-</div>
-<br/>
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
@@ -34,22 +29,13 @@ This workshop will teach you how to
 - A recent version of Node.js and npm.
 - Atlas sample dataset
 
-<h2>Prepare Data</h2>
-
-<ol>
-<li> Load data to Atlas cluster:
-<ul>
-<li>database: <code>sample_mflix</code></li>
-<li>collection: <code>movies</code></li>
-</ul>
-</li>
-
 <h2>To Build and Run This Application....</h2>
 
 1. Clone the repo.
 2. Navigate inside directory.
 3. Run <code>npm install</code> .
-4. Create a .env file with<br/> <code>MONGODB_CONNECTION_STRING=
+4. Create a .env file with<br/>
+   <code>MONGODB_CONNECTION_STRING=
    HF_ACCESS_TOKEN=
    OPENAI_KEY=</code>
 
