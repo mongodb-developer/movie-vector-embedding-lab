@@ -28,9 +28,7 @@ exports = async function vectorSearchDocuments(embedding) {
           poster: 1,
           released: 1,
           genres: 1,
-          score: {
-            $meta: "searchScore",
-          },
+          score: 100,
         },
       },
     ])
