@@ -15,16 +15,6 @@ Hello! 👋 This movie search application allows you to search lightning fast th
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
-Current features implemented in this Movie Search Engine demo application include:
-
-- fuzzy matching
-- highlighting
-- autocomplete
-- relevance-based scoring
-- custom function scoring
-
-<h2 align="center"><a href="netflixclone-xwaaq.mongodbstitch.com/">netflixclone-xwaaq.mongodbstitch.com</a></h2>
-
 <p>This application was created using:</p>
 
 - Node.js
@@ -36,10 +26,6 @@ Current features implemented in this Movie Search Engine demo application includ
 - A MongoDB Atlas account. Get one for free <a href="https://www.mongodb.com/cloud/atlas">here.</a>
 - A recent version of Node.js and npm.
 - Atlas sample dataset
-
-<p float="left">
-    <img src="NetflixArchitecture.png" width="750"  />
-</p>
 
 <h2>Prepare Data</h2>
 
@@ -59,22 +45,14 @@ Current features implemented in this Movie Search Engine demo application includ
 1. Clone the repo.
 2. Navigate inside directory.
 3. Run <code>npm install</code> .
-4. Run <code>npm start </code> .
+4. Create a .env file with <code>MONGODB_CONNECTION_STRING=
+   HF_ACCESS_TOKEN=
+   OPENAI_KEY=</code>
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Atlas Search Workshop:
-
-https://www.atlassearchworkshop.com
-
-React Components:
-<br/>
-
-<div align="center">
-<img src="SearchArchitecture.png" width="700"  />
-</div>
-<br/>
 
 If you have any questions or feedback about this repo, feel free to create an Issue or PR in this repo or reach out to me on Twitter @YouOldMaid.
 
