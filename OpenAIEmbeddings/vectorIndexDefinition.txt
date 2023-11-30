@@ -1,0 +1,26 @@
+Name the index "vectorIndex"
+
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "plot_embedding": {
+        "dimensions": 1536,
+        "similarity": "dotProduct",
+        "type": "knnVector"
+      },
+      "genres": {
+        "normalizer": "lowercase",
+        "type": "token"
+      },
+      "imdb": {
+        "fields": {
+          "rating": {
+            "type": "number"
+          }
+        },
+        "type": "document"
+      }
+    }
+  }
+}
