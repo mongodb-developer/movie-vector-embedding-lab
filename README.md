@@ -3,9 +3,16 @@
 <h3>Atlas Vector Search Workshop
 </h3>
 Atlas Vector Search allows developers to take advantage of sophisticated, off-the-shelf machine learning models to power the transformative applications of the future. With Atlas Vector Search, you can a variety of AI-powered use cases quickly to your application with ease.
+<br/>
+MongoDB Atlas Vector Search provides a lightning fast approximate nearest neighbor search through high dimensional data that you can capture directly in your MongoDB documents. 
+<br/>
+This workshop will teach you how to
 
-In this workshop, MongoDB Atlas Vector Search provides a lightning fast approximate nearest neighbor search through high dimensional data that you can capture directly in your MongoDB documents. This talk will explain the core concepts of High Dimensional Vectors, recent advancements in Machine Learning, and how you can take advantage of our new Vector Search capability along with popular open source frameworks (e.g. LangChain) to add exciting new functionality to your application .
-Hello! 👋 This movie search application allows you to search lightning fast through a wide variety of data types through the sample_mflix.movies dataset offered free to download on MongoDB Atlas.
+- Create vector embeddings from the plots of movie documents.
+- Leverage the data model to store those vector embeddings alongside your other data fields.
+- Index your movie documents using knn, a similarity function, and the dimensions of the encoding model <code>all-MiniLM-L6-v2</code>.
+
+<br/> By the end, you can search semantically through the sample_mflix.movies dataset offered free to download on MongoDB Atlas.
 
 <br/>
 <div align="center">
@@ -37,20 +44,14 @@ Hello! 👋 This movie search application allows you to search lightning fast th
 </ul>
 </li>
 
-<li> Create Search indexes.</li>
-</ol>
-
 <h2>To Build and Run This Application....</h2>
 
 1. Clone the repo.
 2. Navigate inside directory.
 3. Run <code>npm install</code> .
-4. Create a .env file with <code>MONGODB_CONNECTION_STRING=
+4. Create a .env file with<br/> <code>MONGODB_CONNECTION_STRING=
    HF_ACCESS_TOKEN=
    OPENAI_KEY=</code>
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Atlas Search Workshop:
 
