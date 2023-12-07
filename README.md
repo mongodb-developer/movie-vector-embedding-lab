@@ -15,6 +15,12 @@ This workshop will teach you how to
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
+<br/>
+<div align="center">
+<img src="JesseYouTube.png" width="450"  />
+</div>
+<br/>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <p>This application was created using:</p>
