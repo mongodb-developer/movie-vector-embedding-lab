@@ -13,15 +13,12 @@ This workshop will teach you how to
 
 <br/> By the end, you can search semantically through the sample_mflix.movies dataset offered free to download on MongoDB Atlas.
 
-**This project is based on the fantastic YouTube tutorial by Jesse Hall. Click below to open the link to the tutorial and code along with Jesse.**
-
 <br/>
 <div align="center">
 <a href="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs"><img src="JesseYouTube.png" width="600"  /></a>
 </div>
-<br/>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+**This project is based on the fantastic YouTube tutorial by Jesse Hall. Click to open the link to the tutorial and code along with Jesse.**
 
 <p>This application was created using:</p>
 
