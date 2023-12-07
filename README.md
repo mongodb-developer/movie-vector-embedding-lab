@@ -13,11 +13,11 @@ This workshop will teach you how to
 
 <br/> By the end, you can search semantically through the sample_mflix.movies dataset offered free to download on MongoDB Atlas.
 
-**No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
+**This project is based on the fantastic YouTube tutorial by Jesse Hall. Click below to open the link to the tutorial and code along with Jesse.**
 
 <br/>
 <div align="center">
-<img src="JesseYouTube.png" width="450"  />
+<a href="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs"><img src="JesseYouTube.png" width="600"  /></a>
 </div>
 <br/>
 
@@ -45,7 +45,7 @@ This workshop will teach you how to
    HF_ACCESS_TOKEN=
    OPENAI_KEY=</code>
 
-### Atlas Search Workshop:
+**No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
 If you have any questions or feedback about this repo, feel free to create an Issue or PR in this repo.
 
