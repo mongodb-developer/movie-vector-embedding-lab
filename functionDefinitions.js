@@ -36,7 +36,7 @@ async function saveEmbeddings() {
     const collection = db.collection("movies");
 
     const docs = await collection
-      .find({ plot: { $exists: true }, genres: "Horror" })
+      .find({ plot: { $exists: true }, genres: "Comedy" })
       .limit(100)
       .toArray();
 
