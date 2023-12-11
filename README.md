@@ -19,21 +19,12 @@ This workshop will teach you how to
 
 <br/>
 
-<p>This application was created using:</p>
-
-- Node.js
-- Hugging Face sentence-transformers/all-MiniLM-L6-v2 model
-- The Atlas sample dataset of sample_mflix.movies
-
 <div align="center"><div style="display: flex;  justify-content: space-around;">
 <a href="https://huggingface.co/"><img src="images/HuggingFace.png" width="300"  /></a><div align="left" style="margin: 20px">This application was created using:
 
 - Node.js
 - Hugging Face sentence-transformers/all-MiniLM-L6-v2 model
 - The Atlas sample dataset of sample_mflix.movies</div></div>
-</div>
-
-<div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="500"  /></a>
 </div>
 
 <h3>Prerequisites</h3>
@@ -43,7 +34,9 @@ This workshop will teach you how to
 - Atlas sample dataset
 - A HuggingFace access token
 
-https://www.youtube.com/watch?v=jXgJyuBeb_o
+<div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="400"  /></a>
+</div>
+
 learn to create vector embeddings with machine learning models like OpenAI and Hugging Face. Then store those embeddings directly in MongoDB Atlas. Once in Atlas, use $vectorSearch to
 <br/><br/>
 MongoDB Atlas Vector Search provides a lightning fast approximate nearest neighbor search through high dimensional data that you can capture directly in your MongoDB documents.
