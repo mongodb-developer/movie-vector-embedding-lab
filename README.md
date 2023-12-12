@@ -11,11 +11,14 @@
 <a href="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs"><img src="images/JesseYouTube.png" width="600"  /></a>
 </div>
 
-This workshop will teach you how to
+This workshop will teach you the 4 steps on how to create and perform vector search on your MongoDB Atlas data.
+
+<div align="center"><img src="images/StepsVectorSearch.png"  alt="steps"/></div>
 
 - Create vector embeddings from the plots of movie documents.
 - Leverage the data model to store those vector embeddings alongside your other data fields.
 - Index your movie documents using knn, a similarity function, and the dimensions of the encoding model <code>all-MiniLM-L6-v2</code> found on Hugging Face.
+- query for your choice of movie using $vectorSearch aggregation operator!
 
 <br/>
 
@@ -45,9 +48,10 @@ MongoDB Atlas Vector Search provides a lightning fast approximate nearest neighb
 <h2>To Build and Run This Application....</h2>
 
 1. Clone the repo.
-2. Navigate inside directory.
+2. Navigate inside directory <code>cd movie-vector-embedding-lab
+   </code>
 3. Run <code>npm install</code> .
-4. Create a .env file with<br/>
+4. Create a .env file in the root directory with the following environment variables:<br/>
    <code>MONGODB_CONNECTION_STRING=
    HF_ACCESS_TOKEN=
    OPENAI_KEY=</code>
