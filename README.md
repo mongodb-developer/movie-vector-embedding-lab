@@ -20,7 +20,7 @@ This workshop will teach you how to
 <br/>
 
 <div align="center"><div style="display: flex;  justify-content: space-around;">
-<a href="https://huggingface.co/"><img src="images/HuggingFace.png" width="300"  /></a><div align="left" style="margin: 20px">This application was created using:
+<div><a href="https://huggingface.co/"><img src="images/HuggingFace.png" width="300"  /></a></div><div align="left" style="margin: 20px">This application was created using:
 
 - Node.js
 - Hugging Face sentence-transformers/all-MiniLM-L6-v2 model
