@@ -1,8 +1,10 @@
 ### MongoDB Atlas Vector Search Workshop
 
-<h4 style="color:green">Looking to power an artificial intelligence with long term memory that could take over the world? Or maybe something simpler like retrieval augmented generation (RAG), semantic search, recommendation engines, or dynamic personalization. It all starts with the ability to search across vector embeddings.</h4>
+<h4 style="color:green">Looking to power an artificial intelligence with long term memory that could take over the world? Or maybe something simpler like retrieval augmented generation (RAG), semantic search, recommendation engines, or dynamic personalization. It all starts with the ability to search across the vector embeddings of your data.</h4>
 
-<p>In this lesson, using a sample movie dataset and a free forever MongoDB Atlas cluster, you will semantically search for movies based on their plot. Semantic search is searching across data using <i>intent</i> and <i>contextual meaning</i> for more relevant results. This means you can search for <code>cop</code> instead of <code>police man </code> and find both (and then some). Whereas full-text search will only allow you to find words by spelling, not the general meaning. You know what I mean. 😉
+<p>In this lesson, you will learn how to create vector embeddings to store inside MongoDB Atlas with machine learning models such as the ones provided by OpenAI and Hugging Face. Then you will see how easy it is to implement vector search across by using the <code>$vectorSearch</code> operator in the easy-to-learn, ever-extensible MongoDB aggregation framework you already know and love. "GREEN HEART" </p>
+<p>
+In just a few simple code functions, a sample movie dataset, and a free forever MongoDB Atlas cluster, you will semantically search for movies based on their plot. Semantic search means we search across data using <i>intent</i> and <i>contextual meaning</i> for more relevant results. For instance, you can search for <code>cop</code> instead of <code>police man</code> and find both (and then some). Compare this to <i>full-text search</i> which only allows you to find words by spelling, not the general meaning. You know what I mean. 😉
 
 **This project is based on the fantastic YouTube tutorial by Jesse Hall. Click to open the link to the tutorial and code along with Jesse.**
 
@@ -11,39 +13,33 @@
 <a href="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs"><img src="images/JesseYouTube.png" width="600"  /></a>
 </div>
 
-This workshop will teach you the 4 steps on how to create and perform vector search on your MongoDB Atlas data.
+This workshop is broken down into 4 parts to teach you how to create and perform vector search on your MongoDB Atlas data.
 
 <div align="center"><img src="images/StepsVectorSearch.png"  alt="steps"/></div>
 
-- Create vector embeddings from the plots of movie documents.
-- Leverage the data model to store those vector embeddings alongside your other data fields.
-- Index your movie documents using knn, a similarity function, and the dimensions of the encoding model <code>all-MiniLM-L6-v2</code> found on Hugging Face.
-- query for your choice of movie using $vectorSearch aggregation operator!
+- Create vector embeddings from the plots of movie documents using the encoding model <code>all-MiniLM-L6-v2</code> found on Hugging Face.
+- Store those vector embeddings alongside your other data fields in your sample movie document.
+- Index your movie documents using <code>knn</code>, the <code>cosine</code> similarity function, as well the dimensions of the <code>all-MiniLM-L6-v2</code> model.
+- Query for your choice of movie using <code>$vectorSearch</code> aggregation operator!
 
 <br/>
-
-<div align="center"><div style="display: flex;  justify-content: space-around;">
-<div><a href="https://huggingface.co/"><img src="images/HuggingFace.png" width="300"  /></a></div><div align="left" style="margin: 20px">This application was created using:
+<h3>Prerequisites</h3>
+<div align="center">
+<a href="https://huggingface.co/"><img src="images/HuggingFace.png" width="300"  /></a>
+</div>
+<div align="left" style="margin: 20px">This application was created using:
 
 - Node.js
 - Hugging Face sentence-transformers/all-MiniLM-L6-v2 model
-- The Atlas sample dataset of sample_mflix.movies</div></div>
-</div>
-
-<h3>Prerequisites</h3>
-
-- A MongoDB Atlas account. Get one for free <a href="https://www.mongodb.com/cloud/atlas">here.</a> See how it is done: https://www.youtube.com/watch?v=jXgJyuBeb_o
-- A recent version of Node.js and npm.
-- Atlas sample dataset
-- A HuggingFace access token
+- The Atlas sample dataset of sample_mflix.movies</div>
+  As such, you will need the following:<br>
+- A MongoDB Atlas account. Get one for free <a href="https://www.mongodb.com/cloud/atlas">here.</a> <hr>See how it is done: https://www.youtube.com/watch?v=jXgJyuBeb_o<hr>
+- A recent version of Node.js and npm.<br>
+- Atlas sample dataset<br>
+- A <a href="https://huggingface.co/" >HuggingFace </a>access token.
 
 <div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="400"  /></a>
 </div>
-
-learn to create vector embeddings with machine learning models like OpenAI and Hugging Face. Then store those embeddings directly in MongoDB Atlas. Once in Atlas, use $vectorSearch to
-<br/><br/>
-MongoDB Atlas Vector Search provides a lightning fast approximate nearest neighbor search through high dimensional data that you can capture directly in your MongoDB documents.
-<br/>
 
 <h2>To Build and Run This Application....</h2>
 
@@ -55,6 +51,16 @@ MongoDB Atlas Vector Search provides a lightning fast approximate nearest neighb
    <code>MONGODB_CONNECTION_STRING=
    HF_ACCESS_TOKEN=
    OPENAI_KEY=</code>
+
+<h2 style="color:green">Let's Get Started!</h2>
+
+<h4 style="color:indigo">Step 1: Create vector embeddings for movie plot.</h4>
+
+<h4 style="color:indigo">Step 2: Store new acquired embeddings directly in your movie document.</h4>
+<h4 style="color:indigo">Step 3: Index embeddings in the Atlas UI.</h4>
+<h4 style="color:indigo">Step 4: Search semantically with <code>$vectorSearch</code> aggregation operator.</h4>
+
+<hr>
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
