@@ -38,7 +38,7 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 - Atlas sample dataset<br>
 - A <a href="https://huggingface.co/" >HuggingFace </a>access token.
 
-<h2>To Build and Run This Application....</h2>
+<h2>Getting Set Up</h2>
 
 1. Clone the repo.
 2. Navigate inside directory <code>cd movie-vector-embedding-lab
@@ -48,15 +48,16 @@ This workshop is broken down into 4 parts to teach you how to create and perform
    <code>MONGODB_CONNECTION_STRING=
    HF_ACCESS_TOKEN=
    OPENAI_KEY=</code>
-5. Click the **Connect** button in the Atlas UI to find your MongoDB Atlas connection string for the Node.js driver in the Atlas UI. Replace your username and password before pasting into you <code>.env</code> file. It should look like this: <code>mongodb+srv://<username>:<password>@searchparty.ecmzvfs.mongodb.net/?retryWrites=true&w=majority</code>
-6. Replace your HuggingFace access token, as well. You can find it on the <a href="https://huggingface.co/" >HuggingFace </a>website.
+5. Click the **Connect** button in the Atlas UI to find your MongoDB Atlas connection string for the Node.js driver in the Atlas UI. Replace your username and password before pasting into you <code>.env</code> file. It should look like this: <code>mongodb+srv://<username>:<password>@Cluster0.ecmzvfs.mongodb.net/?retryWrites=true&w=majority</code>
+6. Replace your HuggingFace access token, as well. You can obtain an access token from the <a href="https://huggingface.co/" >HuggingFace </a>website by following the steps in the gif below:
 
-<div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="400"  /></a>
+<div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="600"  /></a>
 </div>
 
 <h2 style="color:green">Let's Get Started!</h2>
 
-Once you have your connection string in your
+Now that you have your **.env** file set up with your Atlas cluster connection string, let's make sure it works by executing the <code>main</code> file in the terminal. <br></br> Typing `node main` should result in the follwing message in the console: `Pinged deployment. You successfully connected to your MongoDB Atlas cluster.
+Closing connection.`
 
 All of the code for the following steps can be found in the **functionDefinitions.js** file.
 
