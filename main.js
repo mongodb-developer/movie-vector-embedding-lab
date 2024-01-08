@@ -27,6 +27,7 @@ async function main() {
 // main().catch(console.dir);
 
 // generateEmbeddings("MongoDB is AWESOME!!!");
+saveEmbeddings();
 
 // paste generateEmbeddings function
 async function generateEmbeddings(text) {
