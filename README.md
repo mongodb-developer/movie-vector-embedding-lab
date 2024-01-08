@@ -15,7 +15,7 @@ In just a few simple code functions, a sample movie dataset, and a free forever 
 
 This workshop is broken down into 4 parts to teach you how to create and perform vector search on your MongoDB Atlas data.
 
-<div align="center"><img src="images/StepsVectorSearch.png"  alt="steps"/></div>
+<div align="center"><img src="images/StepsVectorSearch.png" style="border-radius: 10px" alt="steps"/></div>
 
 - Create vector embeddings from the plots of movie documents using the encoding model <code>all-MiniLM-L6-v2</code> found on Hugging Face.
 - Store those vector embeddings alongside your other data fields in your sample movie document.
@@ -25,7 +25,7 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 <br/>
 <h3>Prerequisites</h3>
 <div align="center">
-<a href="https://huggingface.co/"><img src="images/HuggingFace.png" width="300"  /></a>
+<a href="https://huggingface.co/"><img src="images/HuggingFace.png" width="300"  style="border-radius: 10px"/></a>
 </div>
 <div align="left" style="margin: 20px">This application was created using:
 
@@ -54,11 +54,33 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 
 <h2 style="color:green">Let's Get Started!</h2>
 
-<h4 style="color:indigo">Step 1: Create vector embeddings for movie plot.</h4>
+<div  style="display:flex">
+  <img style="border-radius: 10px" src="images/Step1.png" width="200" />
+  
+  <h4 style="color:indigo; margin-left:20px">Step 1: Create vector embeddings for movie plot.</h4>
+</div>
 
-<h4 style="color:indigo">Step 2: Store new acquired embeddings directly in your movie document.</h4>
-<h4 style="color:indigo">Step 3: Index embeddings in the Atlas UI.</h4>
-<h4 style="color:indigo">Step 4: Search semantically with <code>$vectorSearch</code> aggregation operator.</h4>
+<div  style="display:flex; margin-top:20px"">
+  <img style="border-radius: 10px" src="images/Step2.png" width="200" />
+  
+  <h4 style="margin-left:20px">Type stuff here</h4>
+</div>
+
+<div  style="display:flex">
+  <img style="border-radius: 10px" src="images/Step3.png" width="200" />
+  
+  <h4 style="margin-left:20px">Type stuff here</h4>
+</div>
+
+<div  style="display:flex">
+  <img style="border-radius: 10px" src="images/Step4.png" width="200" />
+  
+  <h4 style="margin-left:20px">Type stuff here</h4>
+</div>
+
+<h4 style="color:indigo">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h4>
+<h4 style="color:indigo">Step 3: Index embeddings via the Atlas UI.</h4>
+<h4 style="color:indigo">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h4>
 
 <hr>
 
