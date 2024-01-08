@@ -58,7 +58,7 @@ Let's have a look at the **<code>main.js</code>** file. This is where we will ex
 
 <h2>Testing Atlas Cluster Connection</h2>
 Let's make sure you have your **.env** file set up with your Atlas cluster connection string by executing the <code>main</code> file in the terminal. <br> Typing <code>node main</code> will execute the **main** function on <code>line 27</code>.<br><code>main().catch(console.dir);</code><br> In the <code>try</code> statement, the application will ping the client. If successful, the following message will appear in the console: <br>```Pinged deployment. You successfully connected to your MongoDB Atlas cluster.```
-<br> The app will finally close the connection to the Atlas cluster when finished: <br>```Closing connection.```<br>
+<br> The app will finally close the connection to the Atlas cluster when finished: <br>```j Closing connection. ```<br>
 If this is not working, make sure you have correctly whitelisted your IP address. If you are connecting successfully, we can start searching for vectors!
 
 <h2 style="color:green">Let's Get Started!</h2>
