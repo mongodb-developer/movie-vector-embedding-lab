@@ -54,11 +54,13 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 
 <h2 style="color:green">Let's Get Started!</h2>
 
-|                                   Solarized dark                                   |                                  Solarized Ocean                                   |
+|                                                                                    |                                                                                    |
 | :--------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
 | <img style="border-radius: 10px; float:left" src="images/Step1.png" width="200" /> | <img style="border-radius: 10px; float:left" src="images/Step1.png" width="200" /> |
 
-<div  style="display:flex">
+<img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step1.png" width="200" /> typing
+
+<div  style="display:flex; margin-top:200px">
   <img style="border-radius: 10px; float:left" src="images/Step1.png" width="200" />
   
   <h4 style="color:indigo; margin-left:20px">Step 1: Create vector embeddings for movie plot.</h4>
