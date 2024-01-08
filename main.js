@@ -23,4 +23,13 @@ async function main() {
   }
 }
 
+// After a successful connection, comment out to execute generateEmbeddings function
 main().catch(console.dir);
+
+// paste generateEmbeddings function
+
+// generateEmbeddings("MongoDB is AWESOME!!!");
+
+// paste saveEmbeddings function
+
+// paste queryEmbeddings function
