@@ -90,19 +90,21 @@ const docs = await collection.find({ plot: { $exists: true }, genres: "Comedy" }
 - Click Create Search Index
 - Use the JSON editor
 - name the index <code>vectorIndex</code>
-- from the <code>indexDefinition.txt</code> file, copy the index definition:
-  <code>{
-	"mappings":{
-		"dynamic": false,
-		"fields":{
-			"plot_embedding_hf":{
-				"dimensions":384,
-				"similarity":"cosine",
-				"type":"knnVector"
-			}
-		}
-	}
-}</code>  </td>
+- from the <code>indexDefinition.txt</code> file, copy the index definition:<br>
+
+<code>{
+"mappings":{
+"dynamic": false,
+"fields":{
+"plot_embedding_hf":{
+"dimensions":384,
+"similarity":"cosine",
+"type":"knnVector"
+}
+}
+}
+}</code> </td>
+
 </tr>
 
 </table>
