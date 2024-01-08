@@ -26,6 +26,8 @@ async function main() {
 // After a successful connection, comment out to execute generateEmbeddings function
 // main().catch(console.dir);
 
+// generateEmbeddings("MongoDB is AWESOME!!!");
+
 // paste generateEmbeddings function
 async function generateEmbeddings(text) {
   const data = { inputs: text };
@@ -46,16 +48,14 @@ async function generateEmbeddings(text) {
       );
     }
     // START JUST TO SEE IF EMBEDDINGS ARE RETURNED
-    console.log(response.data);
+    // console.log(response.data);
 
     // IF EMBEDDINGS WORK, UNCOMMENT THE FOLLOWING
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
 }
-
-generateEmbeddings("MongoDB is AWESOME!!!");
 
 // paste saveEmbeddings function
 
