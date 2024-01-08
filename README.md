@@ -54,40 +54,14 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 
 <h2 style="color:green">Let's Get Started!</h2>
 
-|                                                                                                       |       |
-| ----------------------------------------------------------------------------------------------------- | ----- |
-| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step1.png" width="200" /> | Title |
-| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step2.png" width="200" /> | Text  |
+|                                                                                                       |                                                                                                                                       |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step1.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 1: Create vector embeddings for movie plot.</h6>                                      |
+| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step2.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h6>        |
+| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step3.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 3: Create a vector index on the plot embedding field leveraging the Atlas UI.</h6>    |
+| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6> |
 
-<img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step1.png" width="200" /> typing
-
-<div  style="display:flex; margin-top:200px">
-  <img style="border-radius: 10px; float:left" src="images/Step1.png" width="200" />
-  
-  <h4 style="color:indigo; margin-left:20px">Step 1: Create vector embeddings for movie plot.</h4>
 </div>
-
-<div  style="display:flex; margin-top:20px"">
-  <img style="border-radius: 10px" src="images/Step2.png" width="200" />
-  
-  <h4 style="margin-left:20px">Type stuff here</h4>
-</div>
-
-<div  style="display:flex">
-  <img style="border-radius: 10px" src="images/Step3.png" width="200" />
-  
-  <h4 style="margin-left:20px">Type stuff here</h4>
-</div>
-
-<div  style="display:flex">
-  <img style="border-radius: 10px" src="images/Step4.png" width="200" />
-  
-  <h4 style="margin-left:20px">Type stuff here</h4>
-</div>
-
-<h4 style="color:indigo">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h4>
-<h4 style="color:indigo">Step 3: Index embeddings via the Atlas UI.</h4>
-<h4 style="color:indigo">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h4>
 
 <hr>
 
