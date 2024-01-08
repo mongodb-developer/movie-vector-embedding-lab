@@ -111,7 +111,7 @@ With this definition, **"plot_embedding_hf"** is the only field indexed.</td>
 </tr>
 <tr>
 <td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png" width="200" /></td>
-<td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.
+<td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6>
 </td>
 </tr>
 
