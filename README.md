@@ -98,15 +98,19 @@ json
     "mappings":{
         "dynamic": false,
         "fields":{
-        "plot_embedding_hf":{
-            "dimensions":384,
-            "similarity":"cosine",
-            "type":"knnVector"
+            "plot_embedding_hf":{
+                "dimensions":384,
+                "similarity":"cosine",
+                "type":"knnVector"
+            }
         }
     }
 }
-}
 ```
+
+Notice this knnVector type index will use the cosine similarity function, which is great for mapping text data, and the 384 dimensions, the length of the vector arrays provided by HuggingFace's <code>all-MiniLM-L6-v2</code> encoding model.
+
+With this definition, **"plot_embedding_hf"** is the only field indexed.
 
 </td>
 
