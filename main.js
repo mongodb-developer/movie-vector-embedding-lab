@@ -23,7 +23,7 @@ async function main() {
   }
 }
 
-// main().catch(console.dir);
+main().catch(console.dir);
 
 async function generateEmbeddings(text) {
   const data = { inputs: text };
@@ -115,4 +115,4 @@ async function queryEmbeddings(query) {
   }
 }
 
-queryEmbeddings("friends in Las Vegas");
+// queryEmbeddings("friends in Las Vegas");

@@ -38,9 +38,6 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 - Atlas sample dataset<br>
 - A <a href="https://huggingface.co/" >HuggingFace </a>access token.
 
-<div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="400"  /></a>
-</div>
-
 <h2>To Build and Run This Application....</h2>
 
 1. Clone the repo.
@@ -51,22 +48,31 @@ This workshop is broken down into 4 parts to teach you how to create and perform
    <code>MONGODB_CONNECTION_STRING=
    HF_ACCESS_TOKEN=
    OPENAI_KEY=</code>
+5. Click the **Connect** button in the Atlas UI to find your MongoDB Atlas connection string for the Node.js driver in the Atlas UI. Replace your username and password before pasting into you <code>.env</code> file. It should look like this: <code>mongodb+srv://<username>:<password>@searchparty.ecmzvfs.mongodb.net/?retryWrites=true&w=majority</code>
+6. Replace your HuggingFace access token, as well. You can find it on the <a href="https://huggingface.co/" >HuggingFace </a>website.
+
+<div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="400"  /></a>
+</div>
 
 <h2 style="color:green">Let's Get Started!</h2>
 
-|                                                                                                       |                                                                                                                                       |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step1.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 1: Create vector embeddings for movie plot.</h6>                                      |
-| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step2.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h6>        |
-| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step3.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 3: Create a vector index on the plot embedding field leveraging the Atlas UI.</h6>    |
-| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6> |
+Once you have your connection string in your
 
-</div>
+All of the code for the following steps can be found in the **functionDefinitions.js** file.
 
-<hr>
+|                                                                                                       |                                                                                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step1.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 1: Create vector embeddings for movie plot.</h6> In the **functionDefinitions.js** file, the <code>generateEmbeddings</code> function is on lines 2 - 28. |
+| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step2.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h6>                                                                            |
+| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step3.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 3: Create a vector index on the plot embedding field leveraging the Atlas UI.</h6>                                                                        |
+| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6>                                                                     |
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
 If you have any questions or feedback about this repo, feel free to create an Issue or PR in this repo.
 
 Also please join our online <a href="https://developer.mongodb.com/community/forums/">MongoDB Community</a> to interact with our product and engineering teams along with thousands of other MongoDB and Realm users. <br/><br/>Have fun and happy coding!
+
+```
+
+```
