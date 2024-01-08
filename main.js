@@ -24,11 +24,38 @@ async function main() {
 }
 
 // After a successful connection, comment out to execute generateEmbeddings function
-main().catch(console.dir);
+// main().catch(console.dir);
 
 // paste generateEmbeddings function
+async function generateEmbeddings(text) {
+  const data = { inputs: text };
+  try {
+    const response = await axios({
+      url: embeddingUrl,
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${hf_token}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      data: data,
+    });
+    if (response.status !== 200) {
+      throw new Error(
+        `Request failed with status code: ${response.status}: ${response.data}`
+      );
+    }
+    // START JUST TO SEE IF EMBEDDINGS ARE RETURNED
+    console.log(response.data);
 
-// generateEmbeddings("MongoDB is AWESOME!!!");
+    // IF EMBEDDINGS WORK, UNCOMMENT THE FOLLOWING
+    // return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+generateEmbeddings("MongoDB is AWESOME!!!");
 
 // paste saveEmbeddings function
 
