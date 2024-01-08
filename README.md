@@ -92,18 +92,23 @@ const docs = await collection.find({ plot: { $exists: true }, genres: "Comedy" }
 - name the index <code>vectorIndex</code>
 - from the <code>indexDefinition.txt</code> file, copy the index definition:<br>
 
-<code>{
-"mappings":{
-"dynamic": false,
-"fields":{
-"plot_embedding_hf":{
-"dimensions":384,
-"similarity":"cosine",
-"type":"knnVector"
+```json
+json
+{
+    "mappings":{
+        "dynamic": false,
+        "fields":{
+        "plot_embedding_hf":{
+            "dimensions":384,
+            "similarity":"cosine",
+            "type":"knnVector"
+        }
+    }
 }
 }
-}
-}</code> </td>
+```
+
+</td>
 
 </tr>
 
