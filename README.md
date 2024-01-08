@@ -73,18 +73,21 @@ All of the code for the following steps can be found in the **functionDefinition
 </tr>
 <tr>
 <td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step2.png" width="200" /></td>
-<td><h3 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h3> In the **functionDefinitions.js** file, the <code>saveEmbeddings</code> function is on lines 31 - 52. Copy this function and paste it into the your `main.js` file. <br> Notice this function will look for comedies with a plot. <br>                                                      </td>
+<td><h3 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h3> In the **functionDefinitions.js** file, the <code>saveEmbeddings</code> function is on lines 31 - 52. Copy this function and paste it into the your `main.js` file. <br> Notice this function will look for comedies with a plot. 
+```j
+const docs = await collection.find({ plot: { $exists: true }, genres: "Comedy" }).limit(100).toArray();
+```                                                      </td>
 </tr>
 <tr>
 <td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step3.png" width="200" /></td>
 <td><h6 style="color:indigo; margin-left:20px">Step 3: Create a vector index on the plot embedding field leveraging the Atlas UI.</h6></td>
 </tr>
+<tr>
+<td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png" width="200" /></td>
+<td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6></td>
+</tr>
 
 </table>
-  
-<!-- const docs = await collection.find({ plot: { $exists: true }, genres: "Comedy" }).limit(100).toArray(); 
-|  |  |
-| <img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png" width="200" /> | <h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6> | -->
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
