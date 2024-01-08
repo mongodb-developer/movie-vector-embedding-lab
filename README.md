@@ -15,7 +15,7 @@ In just a few simple code functions, a sample movie dataset, and a free forever 
 
 This workshop is broken down into 4 parts to teach you how to create and perform vector search on your MongoDB Atlas data.
 
-<div align="center"><img src="images/StepsVectorSearch.png" style="border-radius: 10px" alt="steps"/></div>
+<div align="center"><img src="images/StepsVectorSearch.png" style="border-radius: 10px" alt="steps" width="700"/></div>
 
 - Create vector embeddings from the plots of movie documents using the encoding model <code>all-MiniLM-L6-v2</code> found on Hugging Face.
 - Store those vector embeddings alongside your other data fields in your sample movie document.
