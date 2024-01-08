@@ -57,8 +57,8 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 Let's have a look at the **<code>main.js</code>** file. This is where we will execute the all the functionality needed for Atlas Vector Search in this workshop. Notice access to the environment variables on line 5: <br><code>const uri = process.env.MONGODB_CONNECTION_STRING;</code> and line 8 for your Hugging Face access token:<br><code>const hf_token = process.env.HF_ACCESS_TOKEN;</code><br>
 
 <h2>Testing Atlas Cluster Connection</h2>
-Let's make sure you have your **.env** file set up with your Atlas cluster connection string by executing the <code>main</code> file in the terminal. <br> Typing `node main` will execute the **main** function on <code>line 27</code>.<br>`main().catch(console.dir);`<br> In the <code>try</code> statement, the application will ping the client. If successful, the following message will appear in the console: <br>`Pinged deployment. You successfully connected to your MongoDB Atlas cluster.`
-<br> The app will finally close the connection to the Atlas cluster when finished: <br>`Closing connection.`<br>
+Let's make sure you have your **.env** file set up with your Atlas cluster connection string by executing the <code>main</code> file in the terminal. <br> Typing <code>node main</code> will execute the **main** function on <code>line 27</code>.<br><code>main().catch(console.dir);</code><br> In the <code>try</code> statement, the application will ping the client. If successful, the following message will appear in the console: <br>```Pinged deployment. You successfully connected to your MongoDB Atlas cluster.```
+<br> The app will finally close the connection to the Atlas cluster when finished: <br>```Closing connection.```<br>
 If this is not working, make sure you have correctly whitelisted your IP address. If you are connecting successfully, we can start searching for vectors!
 
 <h2 style="color:green">Let's Get Started!</h2>
