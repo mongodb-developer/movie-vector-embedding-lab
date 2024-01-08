@@ -76,7 +76,8 @@ All of the code for the following steps can be found in the **functionDefinition
 <td><h3 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h3> In the **functionDefinitions.js** file, the <code>saveEmbeddings</code> function is on lines 31 - 52. Copy this function and paste it into the your `main.js` file. <br> Notice this function will look in the <>sample_mflix.movies</code> collection for 100 comedies with a plot field. 
 <code><br>
 const docs = await collection.find({ plot: { $exists: true }, genres: "Comedy" }).limit(100).toArray();
-</code><br><em>Feel free to change the filter to look for other movie types that suit you. Horror movies can be fun, too. 🧟 </em><br>For each of these 100 movies, this function will use the recently created <code>generateEmbeddings</code> function to obtain vectorized embeddings for the plot field and save them in a new <code>plot_embedding_hf</code> field before replacing the movie document.<br>Execute this function with the call:<br><code>saveEmbeddings();</code><h3>Now re-run the application by typing <code>node main</code> in the console.</h3>You should see the updated documents being logged in the console. <br><img style="border-radius: 10px; margin-top:10px" src="images/saveEmbeddings.png" width="400" /><br>Inside the Atlas UI, you can use the Collections tab to filter for movies with your new vectorized plot fields using the filter:<br><code>{plot_embedding_hf:{$exists:true}}</code></td>
+</code><br><em>Feel free to change the filter to look for other movie types that suit you. Horror movies can be fun, too. 🧟 </em><br>For each of these 100 movies, this function will use the recently created <code>generateEmbeddings</code> function to obtain vectorized embeddings for the plot field and save them in a new <code>plot_embedding_hf</code> field before replacing the movie document.<br>Execute this function with the call:<br><code>saveEmbeddings();</code><h3>Now re-run the application by typing <code>node main</code> in the console.</h3>You should see the updated documents being logged in the console. <br><img style="border-radius: 10px; margin-top:10px" src="images/saveEmbeddings.png" width="400" /><br>Inside the Atlas UI, you can use the Data Explorer in the Collections tab to filter for movies with your new vectorized plot fields using the filter:<br><code>{plot_embedding_hf:{$exists:true}}</code><img style="border-radius: 10px; margin-top:10px" src="images/movieDoc.png" width="400" />
+</td>
 </tr>
 <tr>
 <td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step3.png" width="200" /></td>
@@ -84,7 +85,24 @@ const docs = await collection.find({ plot: { $exists: true }, genres: "Comedy" }
 </tr>
 <tr>
 <td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png" width="200" /></td>
-<td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6></td>
+<td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6>Now that we have the plots of 100 different movies vectorized and stored as an array of floats, we will need to index the new <code>plot_embedding_hf</code> fields before we can search through them.<br> Still in our Atlas UI on the Collections tab:<br> 
+- Go to Search Indexes
+- Click Create Search Index
+- Use the JSON editor
+- name the index <code>vectorIndex</code>
+- from the <code>indexDefinition.txt</code> file, copy the index definition:
+  <code>{
+	"mappings":{
+		"dynamic": false,
+		"fields":{
+			"plot_embedding_hf":{
+				"dimensions":384,
+				"similarity":"cosine",
+				"type":"knnVector"
+			}
+		}
+	}
+}</code>  </td>
 </tr>
 
 </table>
