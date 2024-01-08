@@ -81,11 +81,7 @@ const docs = await collection.find({ plot: { $exists: true }, genres: "Comedy" }
 </tr>
 <tr>
 <td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step3.png" width="200" /></td>
-<td><h6 style="color:indigo; margin-left:20px">Step 3: Create a vector index on the plot embedding field leveraging the Atlas UI.</h6></td>
-</tr>
-<tr>
-<td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png" width="200" /></td>
-<td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6>Now that we have the plots of 100 different movies vectorized and stored as an array of floats, we will need to index the new <code>plot_embedding_hf</code> fields before we can search through them.<br> Still in our Atlas UI on the Collections tab:<br> 
+<td><h6 style="color:indigo; margin-left:20px">Step 3: Create a vector index on the plot embedding field leveraging the Atlas UI.</h6></h6>Now that we have the plots of 100 different movies vectorized and stored as an array of floats, we will need to index the new <code>plot_embedding_hf</code> fields before we can search through them.<br> Still in our Atlas UI on the Collections tab:<br> 
 - Go to Search Indexes
 - Click Create Search Index
 - Use the JSON editor
@@ -110,10 +106,13 @@ json
 
 Notice this knnVector type index will use the cosine similarity function, which is great for mapping text data, and the 384 dimensions, the length of the vector arrays provided by HuggingFace's <code>all-MiniLM-L6-v2</code> encoding model.
 
-With this definition, **"plot_embedding_hf"** is the only field indexed.
+With this definition, **"plot_embedding_hf"** is the only field indexed.</td>
 
+</tr>
+<tr>
+<td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png" width="200" /></td>
+<td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.
 </td>
-
 </tr>
 
 </table>
