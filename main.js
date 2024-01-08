@@ -27,10 +27,73 @@ async function main() {
 // main().catch(console.dir);
 
 // generateEmbeddings("MongoDB is AWESOME!!!");
+
 // saveEmbeddings();
 
 // paste generateEmbeddings function
+async function generateEmbeddings(text) {
+  const data = { inputs: text };
+  try {
+    const response = await axios({
+      url: embeddingUrl,
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${hf_token}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      data: data,
+    });
+    if (response.status !== 200) {
+      throw new Error(
+        `Request failed with status code: ${response.status}: ${response.data}`
+      );
+    }
+    // START JUST TO SEE IF EMBEDDINGS ARE RETURNED
+    // console.log(response.data);
+
+    // IF EMBEDDINGS WORK, UNCOMMENT THE FOLLOWING
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 // paste saveEmbeddings function
 
 // paste queryEmbeddings function
+async function queryEmbeddings(query) {
+  try {
+    await client.connect();
+
+    const db = client.db("sample_mflix");
+    const collection = db.collection("movies");
+
+    results = await collection
+      .aggregate([
+        {
+          $vectorSearch: {
+            index: "vectorIndex",
+            queryVector: await generateEmbeddings(query),
+            path: "plot_embedding_hf",
+            numCandidates: 100,
+            limit: 8,
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            title: 1,
+            plot: 1,
+          },
+        },
+      ])
+      .toArray();
+    console.log(results);
+  } finally {
+    console.log("Closing connection.");
+    await client.close();
+  }
+}
+
+queryEmbeddings("holiday vacation with pets");
