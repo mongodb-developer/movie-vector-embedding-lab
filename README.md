@@ -74,9 +74,9 @@ All of the code for the following steps can be found in the **functionDefinition
 <tr>
 <td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step2.png" width="200" /></td>
 <td><h3 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h3> In the **functionDefinitions.js** file, the <code>saveEmbeddings</code> function is on lines 31 - 52. Copy this function and paste it into the your `main.js` file. <br> Notice this function will look for comedies with a plot. 
-```j
+<code>
 const docs = await collection.find({ plot: { $exists: true }, genres: "Comedy" }).limit(100).toArray();
-```                                                      </td>
+</code></td>
 </tr>
 <tr>
 <td><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step3.png" width="200" /></td>
