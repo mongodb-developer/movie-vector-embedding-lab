@@ -181,7 +181,7 @@ Drumroll, please!<br>
 
 </table>
 
-<div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif" style="border-radius: 10px" alt="demo" width="600"/></div>
+<div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif" style="border-radius: 10px" alt="demo" /></div>
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
