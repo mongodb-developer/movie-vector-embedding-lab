@@ -42,7 +42,7 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 
 * A MongoDB Atlas account. Get one for free <a href="https://www.mongodb.com/cloud/atlas">here.</a><em> See how it is done: https://www.youtube.com/watch?v=jXgJyuBeb_o</em>
 * A recent version of Node.js and npm.<br>
-* Atlas sample dataset<br>
+* Atlas sample dataset downloaded from Atlas UI<br>
 * A <a href="https://huggingface.co/" >HuggingFace </a>access token.
 
 <h2>Getting Set Up</h2>
@@ -54,11 +54,12 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 4. Create a .env file in the root directory with the following environment variables:<br/>
    <code>MONGODB_CONNECTION_STRING=
    HF_ACCESS_TOKEN=
-   OPENAI_KEY=</code>
+   </code>
 5. Click the **Connect** button in the Atlas UI to find your MongoDB Atlas connection string for the Node.js driver in the Atlas UI. Replace your username and password before pasting into you <code>.env</code> file. It should look like this: <code>mongodb+srv://<username>:<password>@Cluster0.ecmzvfs.mongodb.net/?retryWrites=true&w=majority</code>
+   <img src="images/ConnectionString.gif" width="600"  />
 6. Replace your HuggingFace access token, as well. You can obtain an access token from the <a href="https://huggingface.co/" >HuggingFace </a>website by following the steps in the gif below:
 
-<div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="600"  /></a>
+<div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="450"  /></a>
 </div>
 
 Let's have a look at the **<code>main.js</code>** file. This is where we will execute the all the functionality needed for Atlas Vector Search in this workshop. Notice access to the environment variables on line 5: <br><code>const uri = process.env.MONGODB_CONNECTION_STRING;</code> and line 8 for your Hugging Face access token:<br><code>const hf_token = process.env.HF_ACCESS_TOKEN;</code><br>
