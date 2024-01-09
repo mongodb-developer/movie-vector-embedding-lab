@@ -40,10 +40,10 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 
   As such, you will need the following:<br>
 
-- A MongoDB Atlas account. Get one for free <a href="https://www.mongodb.com/cloud/atlas">here.</a><em> See how it is done: https://www.youtube.com/watch?v=jXgJyuBeb_o</em>
-- A recent version of Node.js and npm.<br>
-- Atlas sample dataset<br>
-- A <a href="https://huggingface.co/" >HuggingFace </a>access token.
+* A MongoDB Atlas account. Get one for free <a href="https://www.mongodb.com/cloud/atlas">here.</a><em> See how it is done: https://www.youtube.com/watch?v=jXgJyuBeb_o</em>
+* A recent version of Node.js and npm.<br>
+* Atlas sample dataset<br>
+* A <a href="https://huggingface.co/" >HuggingFace </a>access token.
 
 <h2>Getting Set Up</h2>
 
