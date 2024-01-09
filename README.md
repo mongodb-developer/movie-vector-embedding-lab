@@ -160,10 +160,10 @@ async function queryEmbeddings(query) {
 
 <div>
 Notice the function parameter called "query." This is the description of the movie we provide. In order to perform vector search, we need to vectorize that description using the <code>generateEmbeddings</code> function and store those vectors in the constant <code>vectorizedQuery</code>.</div>
-<div>
-Now we can run an aggregation on the <code>sample_mflix.movies</code> collection.
-* The 1st stage uses the <code>$vectorSearch</code> operator along with our <code>vectorIndex</code> to search for our query in the <code>plot_embedding_hf</code> path and returns the closest 8 matches.
-* The 2nd stage uses <code>$project</code> to return to the client only the <b>title</b> and the <b>plot</b> fields.
+<div><div>Now we can run an aggregation on the <code>sample_mflix.movies</code> collection.</div>
+
+- The 1st stage uses the <code>$vectorSearch</code> operator along with our <code>vectorIndex</code> to search for our query in the <code>plot_embedding_hf</code> path and returns the closest 8 matches.
+- The 2nd stage uses <code>$project</code> to return to the client only the <b>title</b> and the <b>plot</b> fields.
 </div>
 <div>We then convert the results from a cursor to an array before printing them to the console.</div>
 
