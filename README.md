@@ -121,11 +121,11 @@ With this definition, **"plot_embedding_hf"** is the only field indexed.</td>
 <td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png"  /></td>
 <td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6>We are *finally* ready to use <code>$vectorSearch</code> to search for that horror flick whose name is on the tip of our tongue... You know the one...  🤔 <br>
 Find the <code>queryEmbeddings</code> function in the <b>functionDefinitions.js</b> file.
-<code>
-async function queryEmbeddings(query) {
-  try {
-    await client.connect();
 
+```
+async function queryEmbeddings(query) {
+    try {
+    await client.connect();
     const db = client.db("sample_mflix");
     const collection = db.collection("movies");
 
@@ -151,12 +151,12 @@ async function queryEmbeddings(query) {
       .toArray();
     console.log(results);
 
-} finally {
-console.log("Closing connection.");
-await client.close();
+    } finally {
+        console.log("Closing connection.");
+        await client.close();
+    }
 }
-}
-</code>
+```
 
 </td>
 </tr>
@@ -168,11 +168,3 @@ await client.close();
 If you have any questions or feedback about this repo, feel free to create an Issue or PR in this repo.
 
 Also please join our online <a href="https://developer.mongodb.com/community/forums/">MongoDB Community</a> to interact with our product and engineering teams along with thousands of other MongoDB and Realm users. <br/><br/>Have fun and happy coding!
-
-```
-
-```
-
-```
-
-```
