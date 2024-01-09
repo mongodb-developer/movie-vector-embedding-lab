@@ -120,36 +120,34 @@ With this definition, **"plot_embedding_hf"** is the only field indexed.</td>
 <tr>
 <td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png"  /></td>
 <td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6>We are *finally* ready to use <code>$vectorSearch</code> to search for that horror flick whose name is on the tip of our tongue... You know the one...  🤔 <br>
-Find the <code>queryEmbeddings</code> function in the <b>functionDefinitions.js</b> file.
+Find the <code>queryEmbeddings</code> function in the <b>functionDefinitions.js</b> and paste into the <code>main</code> file. Now let's walk
 
 ```
 async function queryEmbeddings(query) {
     try {
-    await client.connect();
-    const db = client.db("sample_mflix");
-    const collection = db.collection("movies");
+        await client.connect();
+        const db = client.db("sample_mflix");
+        const collection = db.collection("movies");
 
-    results = await collection
-      .aggregate([
-        {
-          $vectorSearch: {
-            index: "vectorIndex",
-            queryVector: await generateEmbeddings(query),
-            path: "plot_embedding_hf",
-            numCandidates: 100,
-            limit: 8,
-          },
-        },
-        {
-          $project: {
-            _id: 0,
-            title: 1,
-            plot: 1,
-          },
-        },
-      ])
-      .toArray();
-    console.log(results);
+        results = await collection.aggregate([
+            {
+                $vectorSearch: {
+                    index: "vectorIndex",
+                    queryVector: await generateEmbeddings(query),
+                    path: "plot_embedding_hf",
+                    numCandidates: 100,
+                    limit: 8,
+                },
+            },
+            {
+                $project: {
+                    _id: 0,
+                    title: 1,
+                    plot: 1,
+                },
+            },
+        ]).toArray();
+        console.log(results);
 
     } finally {
         console.log("Closing connection.");
