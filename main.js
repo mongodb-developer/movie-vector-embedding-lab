@@ -60,6 +60,28 @@ async function generateEmbeddings(text) {
 }
 
 // paste saveEmbeddings function
+async function saveEmbeddings() {
+  try {
+    await client.connect();
+
+    const db = client.db("sample_mflix");
+    const collection = db.collection("movies");
+
+    const docs = await collection
+      .find({ plot: { $exists: true }, genres: "Horror" })
+      .limit(100)
+      .toArray();
+
+    for (let doc of docs) {
+      doc.plot_embedding_hf = await generateEmbeddings(doc.plot);
+      await collection.replaceOne({ _id: doc._id }, doc);
+      console.log(`Updated ${doc._id}`);
+    }
+  } finally {
+    console.log("Closing connection.");
+    await client.close();
+  }
+}
 
 // paste queryEmbeddings function
 async function queryEmbeddings(query) {
@@ -96,4 +118,4 @@ async function queryEmbeddings(query) {
   }
 }
 
-queryEmbeddings("holiday vacation with pets");
+queryEmbeddings("zombies eating brains");
