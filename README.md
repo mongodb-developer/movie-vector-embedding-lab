@@ -185,9 +185,7 @@ Drumroll, please!<br>
 
 <div></div>
 <!-- https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif -->
-![]("https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif")
-
-https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif
+![](https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif)
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
