@@ -68,7 +68,7 @@ async function queryEmbeddings(query) {
             queryVector: vectorizedQuery,
             path: "plot_embedding_hf",
             numCandidates: 100,
-            limit: 8,
+            limit: 4,
           },
         },
         {

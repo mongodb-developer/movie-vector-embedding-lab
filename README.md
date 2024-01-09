@@ -84,7 +84,7 @@ All of the code for the following steps can be found in the **functionDefinition
 <td><h3 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h3> In the **functionDefinitions.js** file, the <code>saveEmbeddings</code> function is on lines 31 - 52. Copy this function and paste it into the your `main.js` file. <br> Notice this function will look in the <>sample_mflix.movies</code> collection for 100 scary movies 🧟 with a plot field. 
 <code><br>
 const docs = await collection.find({ plot: { $exists: true }, genres: "Horror" }).limit(100).toArray();
-</code><br><em>Feel free to change the filter to look for other movie types that suit you. Comedies movies can be fun, too. </em>🎭 🤣<br>For each of these 100 movies, this function will use the recently created <code>generateEmbeddings</code> function to obtain vectorized embeddings for the plot field and save them in a new <code>plot_embedding_hf</code> field before replacing the movie document.<br>Execute this function with the call:<br><code>saveEmbeddings();</code><h3>Now re-run the application by typing <code>node main</code> in the console.</h3>You should see the updated documents being logged in the console. <div align="center"><img style="border-radius: 10px; margin-top:10px" src="images/saveEmbeddings.png" width="300" /></div>Inside the Atlas UI, you can use the Data Explorer in the Collections tab to filter for movies with your new vectorized plot fields using the filter:<br><code>{plot_embedding_hf:{$exists:true}}</code><div align="center"></div><img style="border-radius: 10px; margin-top:10px" src="images/movieDoc.png" width="400" /></div>Before moving to the next step, **COMMENT OUT** the call to execute saveEmbeddings<code>saveEmbeddings();</code>
+</code><br><em>Feel free to change the filter to look for other movie types that suit you. Comedies movies can be fun, too. </em>🎭 🤣<br>For each of these 100 movies, this function will use the recently created <code>generateEmbeddings</code> function to obtain vectorized embeddings for the plot field and save them in a new <code>plot_embedding_hf</code> field before replacing the movie document.<br>Execute this function with the call:<br><code>saveEmbeddings();</code><h3>Now re-run the application by typing <code>node main</code> in the console.</h3>You should see the updated documents being logged in the console. <div align="center"><img style="border-radius: 10px; margin-top:10px" src="images/saveEmbeddings.png" width="300" /></div>Inside the Atlas UI, you can use the Data Explorer in the Collections tab to filter for movies with your new vectorized plot fields using the filter:<br><code>{plot_embedding_hf:{$exists:true}}</code><div align="center"></div><img style="border-radius: 10px; margin-top:10px" src="images/movieDoc.png" width="400" /></div><br>Before moving to the next step, **COMMENT OUT** the call to execute saveEmbeddings<code>saveEmbeddings();</code>
 </td>
 </tr>
 <tr>
@@ -159,18 +159,29 @@ async function queryEmbeddings(query) {
 ```
 
 <div>
-Notice the function parameter called "query." This is the description of the movie we provide. In order to perform vector search, we need to vectorize that description using the <code>generateEmbeddings</code> function and store those vectors in the constant <code>vectorizedQuery</code>.</div>
+Notice the function parameter called "query." This is the description of the movie we provide. In order to perform vector search, we need to vectorize that description using the <code>generateEmbeddings</code> function and store those vectors in the constant <code>vectorizedQuery</code>.</div><br>
 <div><div>Now we can run an aggregation on the <code>sample_mflix.movies</code> collection.</div>
 
-- The 1st stage uses the <code>$vectorSearch</code> operator along with our <code>vectorIndex</code> to search for our query in the <code>plot_embedding_hf</code> path and returns the closest 8 matches.
+- The 1st stage uses the <code>$vectorSearch</code> operator along with our <code>vectorIndex</code> to search for our query in the <code>plot_embedding_hf</code> path and returns the closest 4 matches.
 - The 2nd stage uses <code>$project</code> to return to the client only the <b>title</b> and the <b>plot</b> fields.
 </div>
-<div>We then convert the results from a cursor to an array before printing them to the console.</div>
+<div>We then convert the matching movies results from a cursor to an array before printing them to the console.</div><br>
+
+Without further adieu, let's search for a good horror flick by calling :<br>
+
+```
+queryEmbeddings("enormous creatures attacking earth");
+```
+
+Now returning to the terminal, type <code>node main</code> one last time.<br>
+Drumroll, please!<br>
 
 </td>
 </tr>
 
 </table>
+
+<div align="center"><img src="images/queryMovies.gif" style="border-radius: 10px" alt="steps" width="700"/></div>
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
