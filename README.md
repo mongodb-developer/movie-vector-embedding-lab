@@ -181,13 +181,7 @@ Drumroll, please!<br>
 
 </table>
 
-<div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif" style="border-radius: 10px" alt="steps" width="300"/></div>
-
-<div></div>
-<!-- https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif -->
-![](https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif)
-</div>
-![](https://github.com/Voyz/voyz_public/blob/master/databay_promo_vidA_gif_A03.gif)
+<div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif" style="border-radius: 10px" alt="demo" width="600"/></div>
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
