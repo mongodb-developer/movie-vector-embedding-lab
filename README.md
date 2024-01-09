@@ -56,7 +56,7 @@ This workshop is broken down into 4 parts to teach you how to create and perform
    HF_ACCESS_TOKEN=
    </code>
 5. Click the **Connect** button in the Atlas UI to find your MongoDB Atlas connection string for the Node.js driver in the Atlas UI. Replace your username and password before pasting into you <code>.env</code> file. It should look like this: <code>mongodb+srv://<username>:<password>@Cluster0.ecmzvfs.mongodb.net/?retryWrites=true&w=majority</code>
-   <img src="images/ConnectionString.gif" width="600"  />
+   <div align="center"><img src="images/ConnectionString.gif" width="600"  /></div>
 6. Replace your HuggingFace access token, as well. You can obtain an access token from the <a href="https://huggingface.co/" >HuggingFace </a>website by following the steps in the gif below:
 
 <div align="center"><a href="https://huggingface.co/"><img src="images/HFAccessToken.gif" width="450"  /></a>
