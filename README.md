@@ -118,7 +118,7 @@ With this definition, **"plot_embedding_hf"** is the only field indexed.</td>
 
 </tr>
 <tr>
-<td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png"  /></td>
+<td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="[images/Step4.png](https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/Step4.png)"  /></td>
 <td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6>We are *finally* ready to use <code>$vectorSearch</code> to search for that horror flick whose name is on the tip of our tongue... You know the one...  🤔 <br>
 Find the <code>queryEmbeddings</code> function in the <b>functionDefinitions.js</b> and paste into the <code>main</code> file.
 
@@ -181,7 +181,7 @@ Drumroll, please!<br>
 
 </table>
 
-<div align="center"><img src="images/queryMovies.gif" style="border-radius: 10px" alt="steps" width="300"/></div>
+<div align="center"><img src="[images/queryMovies.gif](https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif)" style="border-radius: 10px" alt="steps" width="300"/></div>
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
