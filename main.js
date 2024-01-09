@@ -91,12 +91,14 @@ async function queryEmbeddings(query) {
     const db = client.db("sample_mflix");
     const collection = db.collection("movies");
 
+    const vectorizedQuery = await generateEmbeddings(query);
+
     results = await collection
       .aggregate([
         {
           $vectorSearch: {
             index: "vectorIndex",
-            queryVector: await generateEmbeddings(query),
+            queryVector: vectorizedQuery,
             path: "plot_embedding_hf",
             numCandidates: 100,
             limit: 8,
@@ -118,4 +120,4 @@ async function queryEmbeddings(query) {
   }
 }
 
-queryEmbeddings("zombies eating brains");
+queryEmbeddings("bats attacking people");

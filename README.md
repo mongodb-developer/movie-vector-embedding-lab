@@ -120,7 +120,7 @@ With this definition, **"plot_embedding_hf"** is the only field indexed.</td>
 <tr>
 <td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step4.png"  /></td>
 <td><h6 style="color:indigo; margin-left:20px">Step 4: Search semantically with the <code>$vectorSearch</code> aggregation operator.</h6>We are *finally* ready to use <code>$vectorSearch</code> to search for that horror flick whose name is on the tip of our tongue... You know the one...  🤔 <br>
-Find the <code>queryEmbeddings</code> function in the <b>functionDefinitions.js</b> and paste into the <code>main</code> file. Now let's walk
+Find the <code>queryEmbeddings</code> function in the <b>functionDefinitions.js</b> and paste into the <code>main</code> file.
 
 ```
 async function queryEmbeddings(query) {
@@ -129,11 +129,13 @@ async function queryEmbeddings(query) {
         const db = client.db("sample_mflix");
         const collection = db.collection("movies");
 
+        const vectorizedQuery = await generateEmbeddings(query);
+
         results = await collection.aggregate([
             {
                 $vectorSearch: {
                     index: "vectorIndex",
-                    queryVector: await generateEmbeddings(query),
+                    queryVector: vectorizedQuery,
                     path: "plot_embedding_hf",
                     numCandidates: 100,
                     limit: 8,
@@ -155,6 +157,15 @@ async function queryEmbeddings(query) {
     }
 }
 ```
+
+<div>
+Notice the function parameter called "query." This is the description of the movie we provide. In order to perform vector search, we need to vectorize that description using the <code>generateEmbeddings</code> function and store those vectors in the constant <code>vectorizedQuery</code>.</div>
+<div>
+Now we can run an aggregation on the <code>sample_mflix.movies</code> collection.
+* The 1st stage uses the <code>$vectorSearch</code> operator along with our <code>vectorIndex</code> to search for our query in the <code>plot_embedding_hf</code> path and returns the closest 8 matches.
+* The 2nd stage uses <code>$project</code> to return to the client only the <b>title</b> and the <b>plot</b> fields.
+</div>
+<div>We then convert the results from a cursor to an array before printing them to the console.</div>
 
 </td>
 </tr>
