@@ -183,6 +183,10 @@ Drumroll, please!<br>
 
 <div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif" style="border-radius: 10px" alt="steps" width="300"/></div>
 
+<div></div>
+<!-- https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif -->
+<!-- ![]("https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif") -->
+
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
 If you have any questions or feedback about this repo, feel free to create an Issue or PR in this repo.
