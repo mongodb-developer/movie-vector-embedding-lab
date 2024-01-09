@@ -186,6 +186,8 @@ Drumroll, please!<br>
 <div></div>
 <!-- https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif -->
 ![](https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif)
+</div>
+![](https://github.com/Voyz/voyz_public/blob/master/databay_promo_vidA_gif_A03.gif)
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
