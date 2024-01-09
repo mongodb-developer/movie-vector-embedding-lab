@@ -4,7 +4,7 @@
 
 <p>In this lesson, you will learn how to create vector embeddings to store inside MongoDB Atlas with machine learning models such as the ones provided by OpenAI and Hugging Face. Then you will see how easy it is to implement vector search across by using the <code>$vectorSearch</code> operator in the easy-to-learn, ever-extensible MongoDB aggregation framework you already know and love. 💚 </p>
 <p>
-In just a few simple code functions, a sample movie dataset, and a free forever MongoDB Atlas cluster, you will semantically search for movies based on their plot. Semantic search means we search across data using <i>intent</i> and <i>contextual meaning</i> for more relevant results. For instance, you can search for <code>cop</code> instead of <code>police man</code> and find both (and then some). Compare this to <i>full-text search</i> which only allows you to find words by spelling, not the general meaning. You know what I mean. 😉
+With just a few code functions, a sample movie dataset, and a free forever MongoDB Atlas cluster, you will semantically search for movies based on their plot. Semantic search means we search across data using <i>intent</i> and <i>contextual meaning</i> for more relevant results. For instance, you can search for <code>cop</code> instead of <code>police man</code> and find both (and then some). Compare this to <i>full-text search</i> which only allows you to find words by spelling, not the general meaning. You know what I mean. 😉
 
 **This project is based on the fantastic YouTube tutorial by Jesse Hall. Click to open the link to the tutorial and code along with Jesse.**
 
@@ -24,16 +24,23 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 
 <br/>
 <h3>Prerequisites</h3>
-<div align="center">
+
+<table>
+<tr>
+<td><div align="center">
 <a href="https://huggingface.co/"><img src="images/HuggingFace.png" width="300"  style="border-radius: 10px"/></a>
-</div>
-<div align="left" style="margin: 20px">This application was created using:
+</div></td>
+<td><div align="left" style="margin: 20px">This application was created using:
 
 - Node.js
 - Hugging Face sentence-transformers/all-MiniLM-L6-v2 model
-- The Atlas sample dataset of sample_mflix.movies</div>
+- The Atlas sample dataset of sample_mflix.movies</div></td>
+  </tr>
+  </table>
+
   As such, you will need the following:<br>
-- A MongoDB Atlas account. Get one for free <a href="https://www.mongodb.com/cloud/atlas">here.</a> <hr>See how it is done: https://www.youtube.com/watch?v=jXgJyuBeb_o<hr>
+
+- A MongoDB Atlas account. Get one for free <a href="https://www.mongodb.com/cloud/atlas">here.</a><em> See how it is done: https://www.youtube.com/watch?v=jXgJyuBeb_o</em>
 - A recent version of Node.js and npm.<br>
 - Atlas sample dataset<br>
 - A <a href="https://huggingface.co/" >HuggingFace </a>access token.
