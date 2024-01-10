@@ -102,6 +102,7 @@ All of the code for the following steps can be found in the **functionDefinition
 <tr>
 <td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/Step1.png"  /></td>
 <td ><h4 style="color:indigo; margin-left:20px" >Step 1: Create vector embeddings for movie plot.</h4> In the **functionDefinitions.js** file, the <code>generateEmbeddings</code> function is on lines 2 - 28. <br>
+
 ```
 async function generateEmbeddings(text) {
     const data = { inputs: text };
@@ -130,11 +131,11 @@ async function generateEmbeddings(text) {
     } catch (error) {
         console.error(error);
     }
-
 }
+```
 
-````
 <br>Copy this function and paste it into the your <b>main.js</b> file. <br> Notice that it makes a POST call to the HuggingFace hosted embedding url using your HuggingFace access token. If successful, the function will log the array of floats to the console. <h3 style="color:blue">Test the **generateEmbeddings** functionality by executing <code>generateEmbeddings("MongoDB is AWESOME!!!");</code> </h3> <h3>Now re-run the application by typing <code>node main</code> in the console.</h3> Et voilà!<br><img style="border-radius: 10px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/EmbeddingsGenerated.png" width="400" /><br> Since we see that the embeddings are generated, we will need to return them from the function. Before moving on, let's **COMMENT OUT** <code>console.log(response.data);</code> and let's **UNCOMMENT** <code>return response.data;</code> inside the **generateEmbeddings** function. Also, let's **DELETE** <code>generateEmbeddings("MongoDB is AWESOME!!!")</code>.</code></td>
+
 </tr>
 <tr>
 <td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/Step2.png"  /></td>
@@ -167,7 +168,7 @@ json
         }
     }
 }
-````
+```
 
 Notice this knnVector type index will use the cosine similarity function, which is great for mapping text data, and the 384 dimensions, the length of the vector arrays provided by HuggingFace's <code>all-MiniLM-L6-v2</code> encoding model.
 
