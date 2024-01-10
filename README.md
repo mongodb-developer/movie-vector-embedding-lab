@@ -10,7 +10,7 @@ With just a few code functions, a sample movie dataset, and a free forever Mongo
 
 <br/>
 <div align="center">
-<a href="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs"><img src="images/JesseYouTube.png" width="600"  /></a>
+<a href="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/JesseYouTube.png"" width="600"  /></a>
 </div>
 
 This workshop is broken down into 4 parts to teach you how to create and perform vector search on your MongoDB Atlas data.
@@ -28,7 +28,7 @@ This workshop is broken down into 4 parts to teach you how to create and perform
 <table>
 <tr>
 <td><div align="center">
-<a href="https://huggingface.co/"><img src="images/HuggingFace.png" width="300"  style="border-radius: 10px"/></a>
+<a href="https://huggingface.co/"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/HuggingFace.png" width="300"  style="border-radius: 10px"/></a>
 </div></td>
 <td><div align="left" style="margin: 20px">This application was created using:
 
@@ -77,14 +77,14 @@ All of the code for the following steps can be found in the **functionDefinition
 <table>
 <tr>
 <td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/Step1.png"  /></td>
-<td ><h4 style="color:indigo; margin-left:20px" >Step 1: Create vector embeddings for movie plot.</h4> In the **functionDefinitions.js** file, the <code>generateEmbeddings</code> function is on lines 2 - 28. Copy this function and paste it into the your `main.js` file. <br> Notice that it makes a POST call to the HuggingFace hosted embedding url using your HuggingFace access token. If successful, the function will log the array of floats to the console. <h3 style="color:blue">Test the **generateEmbeddings** functionality by executing <code>generateEmbeddings("MongoDB is AWESOME!!!");</code> </h3> <h3>Now re-run the application by typing <code>node main</code> in the console.</h3> Et voilà!<br><img style="border-radius: 10px" src="images/EmbeddingsGenerated.png" width="400" /><br> Since we see that the embeddings are generated, we will need to return them from the function. Before moving on, let's **COMMENT OUT** <code>console.log(response.data);</code> and let's **UNCOMMENT** <code>return response.data;</code> inside the **generateEmbeddings** function. Also, let's **DELETE** <code>generateEmbeddings("MongoDB is AWESOME!!!")</code>.</code></td>
+<td ><h4 style="color:indigo; margin-left:20px" >Step 1: Create vector embeddings for movie plot.</h4> In the **functionDefinitions.js** file, the <code>generateEmbeddings</code> function is on lines 2 - 28. Copy this function and paste it into the your `main.js` file. <br> Notice that it makes a POST call to the HuggingFace hosted embedding url using your HuggingFace access token. If successful, the function will log the array of floats to the console. <h3 style="color:blue">Test the **generateEmbeddings** functionality by executing <code>generateEmbeddings("MongoDB is AWESOME!!!");</code> </h3> <h3>Now re-run the application by typing <code>node main</code> in the console.</h3> Et voilà!<br><img style="border-radius: 10px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/EmbeddingsGenerated.png" width="400" /><br> Since we see that the embeddings are generated, we will need to return them from the function. Before moving on, let's **COMMENT OUT** <code>console.log(response.data);</code> and let's **UNCOMMENT** <code>return response.data;</code> inside the **generateEmbeddings** function. Also, let's **DELETE** <code>generateEmbeddings("MongoDB is AWESOME!!!")</code>.</code></td>
 </tr>
 <tr>
 <td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/Step2.png"  /></td>
 <td><h3 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h3> In the **functionDefinitions.js** file, the <code>saveEmbeddings</code> function is on lines 31 - 52. Copy this function and paste it into the your `main.js` file. <br> Notice this function will look in the <>sample_mflix.movies</code> collection for 100 scary movies 🧟 with a plot field. 
 <code><br>
 const docs = await collection.find({ plot: { $exists: true }, genres: "Horror" }).limit(100).toArray();
-</code><br><em>Feel free to change the filter to look for other movie types that suit you. Comedies movies can be fun, too. </em>🎭 🤣<br>For each of these 100 movies, this function will use the recently created <code>generateEmbeddings</code> function to obtain vectorized embeddings for the plot field and save them in a new <code>plot_embedding_hf</code> field before replacing the movie document.<br>Execute this function with the call:<br><code>saveEmbeddings();</code><h3>Now re-run the application by typing <code>node main</code> in the console.</h3>You should see the updated documents being logged in the console. <div align="center"><img style="border-radius: 10px; margin-top:10px" src="images/saveEmbeddings.png" width="300" /></div>Inside the Atlas UI, you can use the Data Explorer in the Collections tab to filter for movies with your new vectorized plot fields using the filter:<br><code>{plot_embedding_hf:{$exists:true}}</code><div align="center"></div><img style="border-radius: 10px; margin-top:10px" src="images/movieDoc.png" width="400" /></div><br>Before moving to the next step, **COMMENT OUT** the call to execute saveEmbeddings<code>saveEmbeddings();</code>
+</code><br><em>Feel free to change the filter to look for other movie types that suit you. Comedies movies can be fun, too. </em>🎭 🤣<br>For each of these 100 movies, this function will use the recently created <code>generateEmbeddings</code> function to obtain vectorized embeddings for the plot field and save them in a new <code>plot_embedding_hf</code> field before replacing the movie document.<br>Execute this function with the call:<br><code>saveEmbeddings();</code><h3>Now re-run the application by typing <code>node main</code> in the console.</h3>You should see the updated documents being logged in the console. <div align="center"><img style="border-radius: 10px; margin-top:10px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/saveEmbeddings.png" width="300" /></div>Inside the Atlas UI, you can use the Data Explorer in the Collections tab to filter for movies with your new vectorized plot fields using the filter:<br><code>{plot_embedding_hf:{$exists:true}}</code><div align="center"></div><img style="border-radius: 10px; margin-top:10px" src="images/movieDoc.png" width="400" /></div><br>Before moving to the next step, **COMMENT OUT** the call to execute saveEmbeddings<code>saveEmbeddings();</code>
 </td>
 </tr>
 <tr>
@@ -181,7 +181,7 @@ Drumroll, please!<br>
 
 </table>
 
-<div align="center"><img src="images/queryMovies.gif" style="border-radius: 10px" alt="demo" /></div>
+<div align="center"><img src="images/queryMovies.gif" style="border-radius: 10px" alt="demo" width="600" /></div>
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
