@@ -13,7 +13,7 @@ With just a few code functions, a sample movie dataset, and a free forever Mongo
 <a href="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/JesseYouTube.png"" width="600"  /></a>
 </div>
 
-<div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/HowVectorSearchWorks.png" width="600"</div>
+<div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/HowVectorSearchWorks.png" width="600"/></div>
 
 This workshop is broken down into 4 parts to teach you how to create and perform vector search on your MongoDB Atlas data.
 
