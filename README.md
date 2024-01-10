@@ -13,6 +13,28 @@ With just a few code functions, a sample movie dataset, and a free forever Mongo
 <a href="https://www.youtube.com/embed/wOdZ1hEWvjU?si=Z69G9eKLFKC4LfUs"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/JesseYouTube.png"" width="600"  /></a>
 </div>
 
+Atlas Vector Search works by sending your data of any type through an encoder to obtain vectors, simply an array of floats, as a numeric representation of that data in n-dimensional space. Each number in your array represents a property of that data object.
+
+<div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/WhatIsVector.png" width="450"/></div>
+
+Similar data is mapped closer to each other. In the image below, you can see that sports movies and superhero movies map to proximal clusters once vectorized.
+
+<div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/MovieClusters.png" width="450"/></div>
+
+Leveraging the MongoDB document data model, this n-dimensional array is then stored and indexed alongside your other data inside a document.<br>
+
+```json
+{
+    "_id": ObjectId('573a1390f29313caabcd5293'),
+    "title": "Hoosiers",
+    "plot": "A coach with a checkered past and a local drunk train a small town ...",
+    "year": 1996,
+    "plot_embedding": [0.0729123, -0.0268332, -0.0315214, ...]
+}
+```
+
+On the read side, you encode your query using the same encoder, and submit that vectorized query via the <code>$vectorSearch</code> aggregation stage to your data to find the nearest neighbors in vector space.
+
 <div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/HowVectorSearchWorks.png" width="600"/></div>
 
 This workshop is broken down into 4 parts to teach you how to create and perform vector search on your MongoDB Atlas data.
