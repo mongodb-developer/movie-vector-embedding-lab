@@ -25,7 +25,7 @@ Leveraging the MongoDB document data model, this n-dimensional array is then sto
 
 ```json
 {
-    "_id": ObjectId('573a1390f29313caabcd5293'),
+    "_id": "573a1390f29313caabcd5293",
     "title": "Hoosiers",
     "plot": "A coach with a checkered past and a local drunk train a small town ...",
     "year": 1996,
@@ -33,11 +33,11 @@ Leveraging the MongoDB document data model, this n-dimensional array is then sto
 }
 ```
 
-On the read side, you encode your query using the same encoder, and submit that vectorized query via the <code>$vectorSearch</code> aggregation stage to your data to find the nearest neighbors in vector space.
+On the read side, you encode your query using the same encoder, and submit that vectorized query via the <code>$vectorSearch</code> aggregation stage to your data. The nearest neighbors in vector space to your query are returned as your search results.
 
 <div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/HowVectorSearchWorks.png" width="600"/></div>
 
-This workshop is broken down into 4 parts to teach you how to create and perform vector search on your MongoDB Atlas data.
+<h3 style="margin-top:10px">This workshop is broken down into 4 parts to teach you how to create and perform vector search on your MongoDB Atlas data.</h3>
 
 <div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/StepsVectorSearch.png" style="border-radius: 10px" alt="steps" width="700"/></div>
 
