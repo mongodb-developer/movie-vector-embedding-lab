@@ -76,11 +76,11 @@ All of the code for the following steps can be found in the **functionDefinition
 
 <table>
 <tr>
-<td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step1.png"  /></td>
+<td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/Step1.png"  /></td>
 <td ><h4 style="color:indigo; margin-left:20px" >Step 1: Create vector embeddings for movie plot.</h4> In the **functionDefinitions.js** file, the <code>generateEmbeddings</code> function is on lines 2 - 28. Copy this function and paste it into the your `main.js` file. <br> Notice that it makes a POST call to the HuggingFace hosted embedding url using your HuggingFace access token. If successful, the function will log the array of floats to the console. <h3 style="color:blue">Test the **generateEmbeddings** functionality by executing <code>generateEmbeddings("MongoDB is AWESOME!!!");</code> </h3> <h3>Now re-run the application by typing <code>node main</code> in the console.</h3> Et voilà!<br><img style="border-radius: 10px" src="images/EmbeddingsGenerated.png" width="400" /><br> Since we see that the embeddings are generated, we will need to return them from the function. Before moving on, let's **COMMENT OUT** <code>console.log(response.data);</code> and let's **UNCOMMENT** <code>return response.data;</code> inside the **generateEmbeddings** function. Also, let's **DELETE** <code>generateEmbeddings("MongoDB is AWESOME!!!")</code>.</code></td>
 </tr>
 <tr>
-<td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step2.png"  /></td>
+<td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/Step2.png"  /></td>
 <td><h3 style="color:indigo; margin-left:20px">Step 2: Store newly acquired plot embeddings directly in your movie documents.</h3> In the **functionDefinitions.js** file, the <code>saveEmbeddings</code> function is on lines 31 - 52. Copy this function and paste it into the your `main.js` file. <br> Notice this function will look in the <>sample_mflix.movies</code> collection for 100 scary movies 🧟 with a plot field. 
 <code><br>
 const docs = await collection.find({ plot: { $exists: true }, genres: "Horror" }).limit(100).toArray();
@@ -88,7 +88,7 @@ const docs = await collection.find({ plot: { $exists: true }, genres: "Horror" }
 </td>
 </tr>
 <tr>
-<td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="images/Step3.png"  /></td>
+<td width="200"><img style="border-radius: 10px; float:left; margin-right:20px" src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/Step3.png"  /></td>
 <td><h6 style="color:indigo; margin-left:20px">Step 3: Create a vector index on the plot embedding field leveraging the Atlas UI.</h6></h6>Now that we have the plots of 100 different movies vectorized and stored as an array of floats, we will need to index the new <code>plot_embedding_hf</code> fields before we can search through them.<br> Still in our Atlas UI on the Collections tab:<br> 
 - Go to Search Indexes
 - Click Create Search Index
@@ -159,7 +159,7 @@ async function queryEmbeddings(query) {
 ```
 
 <div>
-Notice the function parameter called "query." This is the description of the movie we provide. In order to perform vector search, we need to vectorize that description using the <code>generateEmbeddings</code> function and store those vectors in the constant <code>vectorizedQuery</code>.</div><br>
+Notice the function parameter called "query." This is the description of the movie we provide. In order to perform vector search, we need to vectorize that description query using the <code>generateEmbeddings</code> function and store those vectors in the constant <code>vectorizedQuery</code>. We have to vectorize the query using the same <code>all-MiniLM-L6-v2</code> embedding model we used to vectorize our movie plots in order to compare them.</div><br>
 <div><div>Now we can run an aggregation on the <code>sample_mflix.movies</code> collection.</div>
 
 - The 1st stage uses the <code>$vectorSearch</code> operator along with our <code>vectorIndex</code> to search for our query in the <code>plot_embedding_hf</code> path and returns the closest 4 matches.
@@ -181,7 +181,7 @@ Drumroll, please!<br>
 
 </table>
 
-<div align="center"><img src="https://kwh-demos.s3.amazonaws.com/vector-embedding-lab-assets/queryMovies.gif" style="border-radius: 10px" alt="demo" /></div>
+<div align="center"><img src="images/queryMovies.gif" style="border-radius: 10px" alt="demo" /></div>
 
 **No additional servers or software needed. No need to keep data in sync. Everything is done in MongoDB Atlas.**
 
