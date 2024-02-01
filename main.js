@@ -26,11 +26,13 @@ async function main() {
 // After a successful connection, comment out to execute generateEmbeddings function
 main().catch(console.dir);
 
-// paste generateEmbeddings function
-// generateEmbeddings("MongoDB is AWESOME!!!");
+// paste generateEmbeddings()
+// generateEmbeddings("MongoDB + ATT = AWESOME FOREVER!")
 
 // paste saveEmbeddings function
 // saveEmbeddings();
 
+// create vector_index in Atlas
+
 // paste queryEmbeddings function
-// queryEmbeddings("enormous creatures attacking earth");
+// queryEmbeddings("aliens destroying the earth");

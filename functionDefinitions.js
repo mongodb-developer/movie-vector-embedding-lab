@@ -64,7 +64,7 @@ async function queryEmbeddings(query) {
       .aggregate([
         {
           $vectorSearch: {
-            index: "vectorIndex",
+            index: "vector_index",
             queryVector: vectorizedQuery,
             path: "plot_embedding_hf",
             numCandidates: 100,
