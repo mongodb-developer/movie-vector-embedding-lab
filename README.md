@@ -178,8 +178,8 @@ const docs = await collection.find({ plot: { $exists: true }, genres: "Horror" }
 <td><h6 style="color:indigo; margin-left:20px">Step 3: Create a vector index on the plot embedding field leveraging the Atlas UI.</h6></h6>Now that we have the plots of 100 different movies vectorized and stored as an array of floats, we will need to index the new <code>plot_embedding_hf</code> fields before we can search through them.<br> Still in our Atlas UI on the Collections tab:<br>
 - Go to Search Indexes
 - Click Create Search Index
-- Use the JSON editor
-- name the index <code>vectorIndex</code>
+- Under <b>Atlas Vector Search</b>, use the JSON editor
+- name the index <code>vector_index</code>
 - from the <code>indexDefinition.txt</code> file, copy the index definition:<br>
 
 ```json
