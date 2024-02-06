@@ -13,19 +13,3 @@ vector_index
 
 
 
-
-
-
-
-{
-	"mappings":{
-		"dynamic": false,
-		"fields":{
-			"plot_embedding_hf":{
-				"dimensions":384,
-				"similarity":"cosine",
-				"type":"knnVector"
-			}
-		}
-	}
-}

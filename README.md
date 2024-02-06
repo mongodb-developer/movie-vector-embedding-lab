@@ -190,7 +190,7 @@ json
       	"type": "vector",
       	"path": "plot_embedding_hf",
     	"numDimensions":384,
-		"similarity":"cosine",
+        "similarity":"cosine",
     }
   ]
 }
