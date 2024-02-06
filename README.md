@@ -185,16 +185,14 @@ const docs = await collection.find({ plot: { $exists: true }, genres: "Horror" }
 ```json
 json
 {
-    "mappings":{
-        "dynamic": false,
-        "fields":{
-            "plot_embedding_hf":{
-                "dimensions":384,
-                "similarity":"cosine",
-                "type":"knnVector"
-            }
-        }
+  "fields":[
+    {
+      	"type": "vector",
+      	"path": "plot_embedding_hf",
+    	"numDimensions":384,
+		"similarity":"cosine",
     }
+  ]
 }
 ```
 
