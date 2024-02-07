@@ -26,17 +26,21 @@ async function main() {
 // After a successful connection, comment out to execute generateEmbeddings function
 main().catch(console.dir);
 
+// Step 1. Create Embeddings
 // paste generateEmbeddings()
 
-//  generateEmbeddings("MongoDB + Albertsons = AWESOME FOREVER!")
+//  generateEmbeddings("MongoDB is AWESOME!")
 
-// paste saveEmbeddings function
+// Step 2. Save Embeddings to Atlas
+// paste saveEmbeddings()
 
 //  saveEmbeddings();
 
+// Step 3. Index Embeddings in Atlas
 // create vector_index in Atlas
 
-// paste queryEmbeddings function
+// Step 4. Query Embeddings
+// paste queryEmbeddings()
 
 
-// queryEmbeddings("");
+// queryEmbeddings("zombies attacking people");

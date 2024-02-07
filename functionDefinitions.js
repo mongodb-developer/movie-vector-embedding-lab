@@ -60,7 +60,7 @@ async function queryEmbeddings(query) {
 
     const vectorizedQuery = await generateEmbeddings(query);
 
-    results = await collection
+    const results = await collection
       .aggregate([
         {
           $vectorSearch: {
