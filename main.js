@@ -27,12 +27,16 @@ async function main() {
 main().catch(console.dir);
 
 // paste generateEmbeddings()
-// generateEmbeddings("MongoDB + ATT = AWESOME FOREVER!")
+
+//  generateEmbeddings("MongoDB + Albertsons = AWESOME FOREVER!")
 
 // paste saveEmbeddings function
-// saveEmbeddings();
+
+//  saveEmbeddings();
 
 // create vector_index in Atlas
 
 // paste queryEmbeddings function
-// queryEmbeddings("aliens destroying the earth");
+
+
+// queryEmbeddings("");
